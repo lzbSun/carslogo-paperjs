@@ -1,24 +1,26 @@
-import logo from './logo.svg';
+import { useEffect, useRef } from 'react';
+import paper from 'paper';
+import Audi from './logos/Audi'
+import BMW from './logos/BMW'
+import Benz from './logos/Benz'
+import Dazhong from './logos/Dazhong'
+
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const canvasRef = useRef(null)
+  
+
+  useEffect(() => {
+    paper.setup(canvasRef.current);
+    Audi()
+    BMW()
+    Benz()
+    Dazhong()
+  },[])
+
+  return ( 
+    <canvas id='my-cars' ref={canvasRef} resize="true" />
   );
 }
 
