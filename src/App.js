@@ -5,6 +5,7 @@ import BMW from './logos/BMW'
 import Benz from './logos/Benz'
 import Dazhong from './logos/Dazhong'
 import XP from './logos/XP'
+import Nio from './logos/Nio'
 
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
     Benz()
     Dazhong()
     XP()
+    Nio()
   },[])
 
   return ( 
